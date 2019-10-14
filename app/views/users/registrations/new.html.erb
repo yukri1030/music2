@@ -1,0 +1,39 @@
+<div class = "background">
+<link href="https://fonts.googleapis.com/earlyaccess/nicomoji.css" rel="stylesheet">
+  <div class = "signup">
+    <h2 class= "title">新規登録</h2>
+
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "users/shared/error_messages", resource: resource %>
+
+      <div class="field"><br />
+      <%= f.label :名前 %><em> (最大6文字まで入力できます)</em><br />
+      <%= f.text_field :name, autofocus: true , class: "input-data" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input-data"%>
+      </div>
+
+      <div class="field">
+        <%= f.label :パスワード %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> 文字以上で入力してください)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password",class: "input-data" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :パスワードの確認 %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "input-data" %>
+      </div> 
+
+      <div class="actions">
+        <br/><%= f.submit "登録" ,class: "submit" %>
+      </div>
+    <% end %>
+
+    <%= render "users/shared/links" %>
+  </div>
+</div>

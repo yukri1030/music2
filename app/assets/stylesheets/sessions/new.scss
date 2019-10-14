@@ -1,0 +1,45 @@
+.signup_box{
+  height: 100vh;
+  width: 100vw;
+  background-image: url('https://exprius.net/wp-content/uploads/2019/02/11111.jpg');
+  background-size:  cover; 
+  opacity: 0.8;
+  overflow: scroll;
+}
+
+.title_second{
+  color: blue;
+  font-size: 50px;
+  font-family: "arial";
+  text-align:center;
+  margin-bottom: 20px;
+  padding-top: 20px;
+}
+
+.login2{
+  height: 40px;
+  width: 150px;
+  background-color: lightcyan;
+  margin-left: 200px;
+  color: black;
+  font-size: 15px;
+
+}
+
+.field2{
+  height: 20px;
+  width: 300px;
+  display: flex;
+}
+.remember_me{
+  height: 0px;
+  width: 0px;
+  margin-right: 15px;
+}
+
+.login2{
+  color: black;
+  font-family: 'MS Sans Serif';
+  border-radius: 4px;
+  margin-bottom: 50px;
+}
