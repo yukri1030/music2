@@ -4,7 +4,7 @@
     <h2 class= "title">新規登録</h2>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= render "users/shared/error_messages", resource: resource %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="field"><br />
       <%= f.label :名前 %><em> (最大6文字まで入力できます)</em><br />
@@ -34,6 +34,6 @@
       </div>
     <% end %>
 
-    <%= render "users/shared/links" %>
+    <%= render "devise/shared/links" %>
   </div>
 </div>
