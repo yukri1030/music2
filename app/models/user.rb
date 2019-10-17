@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :name, presence: true, length: { maximum: 6 }
   validates :email, presence: true, length: { maximum: 30 }
-  validates :password, presence: true, length: { maximum: 10 }
+  validates :password_confirmation, presence: true, length: { maximum: 10 }
 
 def email_required?
      false
