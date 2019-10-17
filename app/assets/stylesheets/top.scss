@@ -38,3 +38,58 @@ a{
   text-decoration: none;
   
 }
+
+a.post{
+  font-size: 20px;
+  color: paleturquoise;
+  float: right;
+  margin-right: 15px;
+}
+
+.background2{
+  height: 100vh;
+  width: 100vw;
+  overflow: scroll;
+  background-image: url('https://ninchisho-online.com/wp-content/uploads/2015/10/2013081102.jpg');
+  background-size:  cover; 
+  opacity: 0.8;
+}
+
+.comment-box{
+  height: 80vh;
+  width: 100vw;
+  margin-top: 50px;
+  margin-left:400px;
+}
+
+.comment-title{
+  color: blue;
+  font-size: 50px;
+  margin-left: 50px;
+}
+
+.nickname{
+  height: 40px;
+  width: 500px;
+  border-radius: 4px;
+  margin: 5px 0;
+  padding-left: 10px;
+}
+
+.url{
+  height: 40px;
+  width: 500px;
+  border-radius: 4px;
+  margin: 5px 0;
+  padding-left: 10px;
+  display: flex;
+}
+
+.comment{
+  height: 400px;
+  width: 500px;
+  border-radius: 4px;
+  margin: 5px 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
