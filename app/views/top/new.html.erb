@@ -1,9 +1,11 @@
 <div class = "background2">
   <div class = "comment-box">
-    <section class="comment-title">コメントの投稿欄</section>
-    <input type="text" name="text" class= "nickname"  placeholder="初期値（任意の値）">
-    <input typel="text" name="text" class="url" placeholder="URLもしくはデータの入力">
-    <textarea type="text" name="text" class="comment" placeholder="コメント"></textarea>
-    <input typle= "submit" value="送信する" class="submit">
+    <%= form_tag('/top', method: :post) do %>
+      <section class="comment-title">コメントの投稿欄</section>
+      <input type="text" name="name" class= "nickname"  placeholder="初期値（任意の値）">
+      <input type="text" name="image" class="url" placeholder="URLもしくはデータの入力">
+      <textarea type="text" name="text" class="comment" placeholder="コメント"></textarea>
+      <input type= "submit" value="送信する" class="submit">
+    <% end %>
   </div>
 </div>

@@ -7,6 +7,12 @@ class TopController < ApplicationController
   end
 
   def create
-    Top.create(nickaname: params[:name], image: params[:image], text: params[:text])
+    Top.create(top_params)
   end
+
+  private
+  def top_params
+    params.permit(:name, :image, :text)
+  end
+  
 end
