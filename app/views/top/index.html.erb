@@ -1,6 +1,6 @@
 <div class = "contents">
   <div class = "contents-box">
-    <p>ようこそMusicサイト</p>
+    <p class="welcome">ようこそMusicサイト</p>
     <% if user_signed_in? %>
         <%= link_to "ログアウト", destroy_user_session_path, class: "login" , method: :delete %>
       <% else %>
@@ -9,10 +9,13 @@
       <a class="post" href="/top/new">投稿する</a>
     <% end %>
   </div>
-  <div class= "contents-low">
+  <div class= "contents_low">
     <% @comments.each do |comment| %>
-    <p><%= comment.text %></p> 
-    <% end %> 
+      <div class="comment_post" style="background-image: url(<%= comment.image %>);" >
+      <p class="comment_text"><%= comment.text %></p>
+      <span class="comment_name"><%= comment.name %></span>
+      <div>
   </div> 
+  <% end %> 
 </div>
 

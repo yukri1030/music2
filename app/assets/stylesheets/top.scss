@@ -3,6 +3,7 @@
   padding: 0;
 }
 
+
 .contents{
   height: 100vh;
   width: 100vw;
@@ -14,11 +15,37 @@
   overflow: scroll;
 }
 
+
 .contents-box{
-  height: 100px;
+  // height: 100px;
   width: 100%;
   border: 1px solid black;
   padding-top: 10px;
+}
+
+.contents_low{
+  position: relative;
+  width: 500px;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.comment_post:after{
+  position: absolute;
+  content: '';
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.comment_name{
+ margin: right; 
+ margin: auto;
+ 
+}
+
+.comment_text{
+  display: flex;
+  margin: auto;
 }
 
 p{

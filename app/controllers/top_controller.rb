@@ -8,6 +8,7 @@ class TopController < ApplicationController
 
   def create
     Top.create(top_params)
+    redirect_to root_path,notice: 'コメントを作成しました'
   end
 
   private
