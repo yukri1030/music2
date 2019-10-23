@@ -1,6 +1,9 @@
 class TopController < ApplicationController
+
+  before_action :move_to_index, except: :index
+
   def index
-    @comments = Top.all
+    @comments = Top.order("created_at DESC").page(params[:page]).per(5)
   end
 
   def new
@@ -15,5 +18,8 @@ class TopController < ApplicationController
   def top_params
     params.permit(:name, :image, :text)
   end
-  
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
+  end
 end
