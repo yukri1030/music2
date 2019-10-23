@@ -9,13 +9,13 @@
       <a class="post" href="/top/new">投稿する</a>
     <% end %>
   </div>
-  <div class= "contents_low">
-    <% @comments.each do |comment| %>
-      <div class="comment_post" style="background-image: url(<%= comment.image %>);" >
-      <p class="comment_text"><%= comment.text %></p>
-      <span class="comment_name"><%= comment.name %></span>
-      <div>
-  </div> 
-  <% end %> 
+    
+  <% @comments.each do |comment| %>
+    <div class="contents_low">
+      <div class= "comment_post" style="background-image: url(<%= comment.image %>);" 
+      <span class="comment_name"><%= comment.name %></span></div>
+       <p class="comment_text"><%= comment.text %></p>
+      </div>
+    <% end %> 
 </div>
 
