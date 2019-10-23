@@ -12,9 +12,9 @@
     
   <% @comments.each do |comment| %>
     <div class="contents_low">
-      <div class= "comment_post" style="background-image: url(<%= comment.image %>);" 
-      <span class="comment_name"><%= comment.name %></span></div>
-       <p class="comment_text"><%= comment.text %></p>
+      <span class="comment_name"><%= comment.name %></span>
+      <div class= "comment_post" style="background-image: url(<%= comment.image %>);" >
+       <p class="comment_text"><%= comment.text %></p></div>
       </div>
     <% end %> 
 </div>

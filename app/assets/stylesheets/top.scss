@@ -23,11 +23,10 @@
 }
 
 .contents_low{
-  position: relative;
   width: 500px;
-  height: 100vh;
   margin: auto;
   margin-bottom: 50px;
+  margin-top: 30px;
 }
 
 .comment_post {
@@ -35,17 +34,21 @@
   margin-bottom: 50px;
   height: 400px;
   width: 400px;
+  border: 1px solid lightcyan; 
+  padding: 15px;
+  margin-top: 10px;
 }
 
-.comment_name{
- margin: right; 
+.comment_name{ 
  margin: auto;
- 
+ margin: 50px;
 }
 
 .comment_text{
   display: flex;
   margin: auto;
+  padding-top: 350px;
+ float: right;
 }
 
 p{
