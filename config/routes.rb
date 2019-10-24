@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   get 'top' => 'top#index'
   get 'top/new' => 'top#new'
   post 'top' => 'top#create'
+  delete 'top/:id' => 'top#destroy'
+  get 'users/:id' => 'users#show'
 end

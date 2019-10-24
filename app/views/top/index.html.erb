@@ -2,11 +2,14 @@
   <div class = "contents-box">
     <p class="welcome">ようこそMusicサイト</p>
     <% if user_signed_in? %>
+      <span><%= current_user.name%>
+      <a href="/users/<%= current_user.id%>">マイページ</a>
         <%= link_to "ログアウト", destroy_user_session_path, class: "login" , method: :delete %>
+        </span>
       <% else %>
       <%= link_to "ログイン",  new_user_session_path, class: "login" , method: :get %><!-- ログイン画面に移行する -->
       <%= link_to "新規登録", new_user_registration_path, class: "login" , method: :get %> <!-- 新規登録画面に移行する --> 
-      <a class="post" href="/top/new">投稿する</a>
+      <a class="post" href="/top/new">投稿する</a> 
     <% end %>
   </div>
     
