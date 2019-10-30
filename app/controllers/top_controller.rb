@@ -1,6 +1,6 @@
 class TopController < ApplicationController
 
-  before_action :move_to_index, except: :index
+  before_action :move_to_index, except: [:index, :show]
 
   def index
     @comments = Top.order("created_at DESC").page(params[:page]).per(5)
@@ -10,21 +10,33 @@ class TopController < ApplicationController
   end
 
   def create
-    Top.create(top_params)
+    Top.create(image: top_params[:image], text: top_params[:text], user_id: current_user.id)
     redirect_to root_path,notice: 'コメントを作成しました'
   end
 
   def destroy
-    # binding.pry
     comment = Top.find(params[:id])
     if comment.user_id == current_user.id
       comment.destroy
     end
   end
 
+  def edit
+    @comment = Top.find(params[:id])
+  end
+
+  def update
+    comment = Top.find(params[:id])
+    comment.update(top_params) if comment.user_id == current_user.id
+  end
+
+  def show
+    @comment = Top.find(params[:id])
+  end
+
   private
   def top_params
-    params.permit(:name, :image, :text, :id)
+    params.permit(:name, :image, :text, :user_id)
   end
 
   def move_to_index
