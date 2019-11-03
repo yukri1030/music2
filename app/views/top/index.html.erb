@@ -14,16 +14,29 @@
     
   <% @comments.each do |comment|%>
     <div class="contents_low">
-    <% if user_signed_in? && current_user.id == comment.user_id %>
-        <%= link_to '削除',  "/top/#{comment.id}", class: "login3",  method: :delete  %>
-        <%= link_to '編集', "/top/#{comment.id}/edit", method: :get  %>
-        <%= link_to '詳細', "/top/#{comment.id}", method: :get  %>
-      <% end %>
-      <span class="comment_name"><%= comment.name %></span>
       <div class= "comment_post" style="background-image: url(<%= comment.image %>);" >
-       <p class="comment_text"><%= comment.text %></p></div>
+        <div class="more">
+          <span><img src ="/assets/arrow_top-4763537352ebf95dfc22270db55f9aa7798af326400039b6c27cc63b23ea2765.png"></span>
+          <ul class="more_list">
+          <li>
+            <%= link_to '詳細',"/top/#{comment.id}", method: :get %>
+          </li>
+        <% if user_signed_in? && current_user.id == comment.user_id %>
+          <li>
+            <%= link_to '編集', "/top/#{comment.id}/edit", method: :get %>
+          </li>
+          <li>
+              <%= link_to '削除', "/top/#{comment.id}", method: :delete %>
+          </li>      
+        <% end %>
+        </ul>
+      </div>  
+        <span class="comment_name"><%= comment.name %></span>
+        <p class="comment_text"><%= comment.text %></p></div>
+      <% end %> 
       </div>
-    <% end %> 
+    </div>
+  </div>
   <%= paginate(@comments) %>
 </div>
 </div>
