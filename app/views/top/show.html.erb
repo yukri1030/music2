@@ -19,7 +19,7 @@
     </div>
     <p class="comment_shousai"><%= @comment.text %></p>
     <a href="/users/<%= current_user.id %>", class="comment_user">
-      <span>投稿者<%= @comment.user.name %></a></span>
+      <span>投稿者  <%= @comment.user.name %></a></span>
     </div>
     <div class="name">
       <% if current_user %>
@@ -32,10 +32,12 @@
       <h4>＜コメント一覧＞</h4>
       <% if @messages %>
         <% @messages.each do |message| %>
-          <p>
-            <strong><%= link_to message.user.name, "/users/#{message.user_id}" %>：</strong>
-            <%= message.text %>
-          </p>
+          <ul>
+            <li><p>
+              <strong><%= link_to message.user.name, "/users/#{message.user_id}" %>：</strong>
+              <%= message.text %>
+            </p></li>
+          </ul>
         <% end %>
       <% end %>
     </div>
