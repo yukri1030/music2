@@ -1,17 +1,22 @@
 <div class = "contents">  
   <div class="comment_edit_title">コメント編集ページ</div>
-  <div class="content_post" >
-    <% if user_signed_in? && current_user.id == @comment.user_id %>
-      <div class= "comment_post" style="background-image: url(<%= @comment.image %>);" >
+  <div class= "comment_post" style="background-image: url(<%= @comment.image %>);" >
+    <div class="more">
+      <span><img src ="/assets/arrow_top-4763537352ebf95dfc22270db55f9aa7798af326400039b6c27cc63b23ea2765.png"></span>
       <ul class="more_list">
-        <li>
-          <%= link_to '編集', "/top/#{@comment.id}/edit", class: "login3", method: :get %>
-        </li>
-        <li>
-          <%= link_to '削除', "/top/#{@comment.id}",class: "login3",  method: :delete %>
-        </li>
-      </ul>
+      <li>
+        <%= link_to '詳細',"/top/#{@comment.id}", method: :get %>
+      </li>
+    <% if user_signed_in? && current_user.id == @comment.user_id %>
+      <li>
+        <%= link_to '編集', "/top/#{@comment.id}/edit", method: :get %>
+      </li>
+      <li>
+        <%= link_to '削除', "/top/#{@comment.id}", method: :delete %>
+      </li>   
     <% end %>
+    </ul>
+    </div>
     <p class="comment_shousai"><%= @comment.text %></p>
     <a href="/users/<%= current_user.id %>", class="comment_user">
       <span>投稿者<%= @comment.user.name %></a></span>
@@ -33,5 +38,6 @@
           </p>
         <% end %>
       <% end %>
+    </div>
   </div>
 </div>
