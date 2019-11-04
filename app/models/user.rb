@@ -7,6 +7,7 @@ class User < ApplicationRecord
   validates :email, presence: true, length: { maximum: 30 }
   validates :password_confirmation, presence: true, length: { maximum: 10 }
   has_many :tops
+  has_many :messages
 
 def email_required?
      false

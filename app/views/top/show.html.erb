@@ -1,0 +1,37 @@
+<div class = "contents">  
+  <div class="comment_edit_title">コメント編集ページ</div>
+  <div class="content_post" >
+    <% if user_signed_in? && current_user.id == @comment.user_id %>
+      <div class= "comment_post" style="background-image: url(<%= @comment.image %>);" >
+      <ul class="more_list">
+        <li>
+          <%= link_to '編集', "/top/#{@comment.id}/edit", class: "login3", method: :get %>
+        </li>
+        <li>
+          <%= link_to '削除', "/top/#{@comment.id}",class: "login3",  method: :delete %>
+        </li>
+      </ul>
+    <% end %>
+    <p class="comment_shousai"><%= @comment.text %></p>
+    <a href="/users/<%= current_user.id %>", class="comment_user">
+      <span>投稿者<%= @comment.user.name %></a></span>
+    </div>
+    <div class="name">
+      <% if current_user %>
+      <%= form_tag("/top/#{@comment.id}/messages", method: :post) do %>
+      <textarea cols="30" name="text" placeholder="コメントする" rows="2" class="comment_edit_box"></textarea>
+        <input type="submit" value="送信する" class="submit">
+      <% end %>
+    <% end %>
+    <div class="comments">   
+      <h4>＜コメント一覧＞</h4>
+      <% if @messages %>
+        <% @messages.each do |message| %>
+          <p>
+            <strong><%= link_to message.user.name, "/users/#{message.user_id}" %>：</strong>
+            <%= message.text %>
+          </p>
+        <% end %>
+      <% end %>
+  </div>
+</div>

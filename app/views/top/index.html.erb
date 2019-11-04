@@ -11,33 +11,15 @@
       <%= link_to "ログイン",  new_user_session_path, class: "login" , method: :get %><!-- ログイン画面に移行する -->
       <%= link_to "新規登録", new_user_registration_path, class: "login" , method: :get %> <!-- 新規登録画面に移行する --> 
     <% end %>
-    
+  </div>
+
   <% @comments.each do |comment|%>
     <div class="contents_low">
-      <div class= "comment_post" style="background-image: url(<%= comment.image %>);" >
-        <div class="more">
-          <span><img src ="/assets/arrow_top-4763537352ebf95dfc22270db55f9aa7798af326400039b6c27cc63b23ea2765.png"></span>
-          <ul class="more_list">
-          <li>
-            <%= link_to '詳細',"/top/#{comment.id}", method: :get %>
-          </li>
-        <% if user_signed_in? && current_user.id == comment.user_id %>
-          <li>
-            <%= link_to '編集', "/top/#{comment.id}/edit", method: :get %>
-          </li>
-          <li>
-              <%= link_to '削除', "/top/#{comment.id}", method: :delete %>
-          </li>      
-        <% end %>
-        </ul>
-      </div>  
-        <span class="comment_name"><%= comment.name %></span>
-        <p class="comment_text"><%= comment.text %></p></div>
-      <% end %> 
-      </div>
+      <%= render partial: "comment", locals: { comment: comment } %>
+    <% end %> 
     </div>
   </div>
   <%= paginate(@comments) %>
 </div>
-</div>
+
 

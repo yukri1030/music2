@@ -32,6 +32,7 @@ class TopController < ApplicationController
 
   def show
     @comment = Top.find(params[:id])
+    @messages = @comment.messages.includes(:user)
   end
 
   private
