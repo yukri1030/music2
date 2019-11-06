@@ -6,6 +6,6 @@ class MessagesController < ApplicationController
 
   private
   def message_params
-    params.permit(:text, :top_id)
+    params.permit(:text, :top_id, :image)
   end
 end
