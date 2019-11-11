@@ -17,9 +17,9 @@
     <div class="contents_low">
       <%= render partial: "comment", locals: { comment: comment } %>
     <% end %> 
+    <%= paginate(@comments) %>
     </div>
   </div>
-  <%= paginate(@comments) %>
 </div>
 
 

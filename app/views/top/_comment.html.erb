@@ -13,6 +13,9 @@
         <%= link_to '削除', "/top/#{comment.id}", method: :delete %>
     </li>      
   <% end %>
+   </div>
   </ul>
-</div>  
-<p class="comment_text"><%= comment.text %></p>
+  <p class="comment_shousai"><%= comment.text %>
+  <span class="comment_user1"><%= comment.name %></span></p>
+</div>
+
