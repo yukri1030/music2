@@ -14,9 +14,9 @@
         <% end %>
       </ul>
     </div>
-    <p class="comment_shousai"><%= @comment.text %></p>
+    <p class="comment_shousai"><%= @comment.text %>
     <a href="/users/<%= current_user.id %>", class="comment_user">
-      <span>投稿者  <%= @comment.user.name %></a></span>
+      <span>投稿者  <%= @comment.user.name %></a></span></p>
     </div>
     <div class="name">
       <% if current_user %>
