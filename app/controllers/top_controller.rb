@@ -10,7 +10,8 @@ class TopController < ApplicationController
   end
 
   def create
-    Top.create(top_params)
+    # binding.pry
+    Top.create(name: top_params[:name], image: top_params[:image], text: top_params[:text], user_id: current_user.id)
     redirect_to root_path,notice: 'コメントを作成しました'
   end
 
