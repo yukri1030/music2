@@ -12,6 +12,7 @@
             <%= link_to '削除', "/top/#{@comment.id}", method: :delete %>
           </li>   
         <% end %>
+      </div>
       </ul>
     <p class= "comment_shousai"><%= @comment.text %>
     <a href="/users/<%= current_user.id %>", class="comment_user">
@@ -39,5 +40,4 @@
       <% end %>
     </div>
   </div>
-</div>
 </div>
