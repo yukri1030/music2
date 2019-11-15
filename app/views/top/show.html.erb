@@ -31,7 +31,7 @@
       <% if @messages %>
         <% @messages.each do |message| %>
           <ul>
-            <li><p>
+            <li><p class="message">
               <strong><%= link_to message.user.name, "/users/#{message.user_id}" %>：</strong>
               <%= message.text %>
             </p></li>
