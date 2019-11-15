@@ -222,8 +222,9 @@ h3.destroy_click{
 }
 
 .comment_user1{
-  padding-left: 200px;
+  padding-top: 350px;
   color: black;
+  float: right;
   font-size: 15px;
 }
 
@@ -248,4 +249,12 @@ h3.destroy_click{
   border: 1px solid gray;
   margin-left: 50px;
   padding: 5px;
+}
+
+.message{
+  color: black;
+}
+
+ul.message{
+  color: black;
 }
