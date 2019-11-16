@@ -148,22 +148,39 @@ a.post{
   padding-left: 10px;
 }
 
+.image_box{
+  // height: 40px;
+  width: 500px;
+  margin-bottom: 10px;
+  display: flex;
+}
+
 .url{
   height: 40px;
-  width: 500px;
+  width: 480px;
   border-radius: 4px;
+  background-color: white;
   margin: 5px 0;
   padding-left: 10px;
-  display: flex;
+  // display: flex;
+}
+
+label{
+  height: 40px;
+  margin: 5px 0;
+  background-color: white;
+  border-radius: 4px;
+
 }
 
 .comment{
   height: 400px;
   width: 500px;
   border-radius: 4px;
-  margin: 5px 0;
+  margin: 10px 0;
   padding-top: 10px;
   padding-left: 10px;
+
 }
 
 // 削除完了画面
@@ -258,3 +275,4 @@ h3.destroy_click{
 ul.message{
   color: black;
 }
+
