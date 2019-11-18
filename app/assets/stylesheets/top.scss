@@ -149,10 +149,16 @@ a.post{
 }
 
 .image_box{
-  // height: 40px;
   width: 500px;
   margin-bottom: 10px;
   display: flex;
+}
+
+.image_file{
+  width: 20px;
+  background-color: white;
+  border-radius: 4px;
+  margin: 5px 0;
 }
 
 .url{
@@ -162,7 +168,6 @@ a.post{
   background-color: white;
   margin: 5px 0;
   padding-left: 10px;
-  // display: flex;
 }
 
 label{
@@ -170,7 +175,16 @@ label{
   margin: 5px 0;
   background-color: white;
   border-radius: 4px;
+}
 
+// ファイルのアップロード機能
+.fa-adjust:before{
+  height: 3px;
+  width: 3px;
+}
+
+input.hidden{
+  display: none; 
 }
 
 .comment{

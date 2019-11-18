@@ -1,19 +1,20 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 <div class = "background2">
   <div class = "comment-box">
-    <%= form_tag('/top', method: :post) do |f| %>
+    <%= form_tag('/top', method: :post, multipart: true) do |f| %>
       <section class="comment-title">コメントの投稿欄</section>
       <input type="text" name="name" class= "nickname"  placeholder="初期値（任意の値）">
       <div class="image_box">
         <input type="text" name="image" class="url" placeholder="URLもしくはデータの入力">
-          <label :image do %>
-          <i class="fas fa-adjust fa-pulse">
-          <%# <%= f.file_field :image , class: "hidden" %></i> 
+          <div class="image_file">
+            <label :image do >
+              <i class="fas fa-adjust">
+              <%= file_field_tag :image, class:'hidden' %></i>
+          </div>
       </div>
       <textarea type="text" name="text" class="comment" placeholder="コメント"></textarea>
       <section></section>
       <input type= "submit" value="送信する" class="submit">
     <% end %> 
   </div>
-</div>
 </div>
