@@ -10,10 +10,10 @@
           </li>
           <li>
             <%= link_to '削除', "/top/#{@comment.id}", method: :delete %>
-          </li>   
-        <% end %>
+          </li> 
       </div>
-      </ul>
+    <% end %>
+    </ul>  
     <p class= "comment_shousai"><%= @comment.text %>
     <a href="/users/<%= current_user.id %>", class="comment_user">
       <span>投稿者  <%= @comment.user.name %></a></span></p>
