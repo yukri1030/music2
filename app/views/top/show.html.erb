@@ -21,7 +21,7 @@
 
     <div class="name">
       <% if current_user %>
-      <%= form_tag("/top/#{@comment.id}/messages", method: :post) do %>
+      <%= form_tag("/top/#{@comment.id}/messages", method: :post, id: "new_comment") do %>
       <textarea cols="30" name="text" placeholder="コメントする" rows="2" class="comment_edit_box"></textarea>
         <input type="submit" value="送信する" class="submit">
       <% end %>
