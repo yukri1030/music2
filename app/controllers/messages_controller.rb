@@ -1,7 +1,10 @@
 class MessagesController < ApplicationController
   def create
-  message = Message.create(name: message_params[:name], text: message_params[:text], top_id: message_params[:top_id], user_id: current_user.id)
-  redirect_to "/top/#{message.top.id}"
+  message = Message.create(message_params)
+  respond_to do |format|  
+    format.html { redirect_to top_path(params[:top_id]) }
+    format.json
+  end
  end
 
   private
