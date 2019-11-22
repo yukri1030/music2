@@ -12,18 +12,21 @@ $(function(){
 
   $('#new_comment').on('submit', function(e){
     e.preventDefault();
+
     var formData  = new FormData(this);
-    var url = $(this).attr('action')
+    var url = $(this).attr('action')  
     $.ajax({
       url: url,
       type: "POST",
       data: formData,
       dataType: 'json',
       processData: false,
-      centetType: false
+      contentType: false
     })
+
+    // console.log(this)
+    
     .done(function(data){
-      console.log(data)
       var html = buildHTML(data);
       var html = buildHTML(data);
       $('.comments').append(html);
