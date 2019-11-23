@@ -5,7 +5,7 @@ $(function(){
                     <a href=/users/${message.user_id}>${message.user_name}</a>
                     ：
                   </strong>
-                  ${messge.text}
+                  ${message.text}
                 </p>`
     return html; 
   }
@@ -24,16 +24,15 @@ $(function(){
       contentType: false
     })
 
-    // console.log(this)
-    
     .done(function(data){
+      console.log(data)
       var html = buildHTML(data);
       var html = buildHTML(data);
       $('.comments').append(html);
       $('.comment_edit_box').val('');
       $('.submit').prop('disabled', false);
     })
-    .false(function(){
+    .fail(function(){
       alert('error');
     })
   })   
