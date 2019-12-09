@@ -37,7 +37,7 @@ class TopController < ApplicationController
 
   private
   def top_params
-    params.permit(:name, :image, :text)
+    params.permit(:id, :name, :image, :imageurl, :text)
   end
 
   def move_to_index
