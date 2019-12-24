@@ -1,20 +1,20 @@
 <div class= "comment_post" style="background-image: url(<%= comment.image %><%= comment.imageurl %>);" >
   <div class="more">
-    <span><img src ="/assets/arrow_top-4763537352ebf95dfc22270db55f9aa7798af326400039b6c27cc63b23ea2765.png"></span>
-    <ul class="more_list">
-    <li>
-      <%= link_to '詳細',"/top/#{comment.id}", method: :get %>
-    </li>
-  <% if user_signed_in? && current_user.id == comment.user_id %>
-    <li>
-      <%= link_to '編集', "/top/#{comment.id}/edit", method: :get %>
-    </li>
-    <li>
-        <%= link_to '削除', "/top/#{comment.id}", method: :delete %>
-    </li>      
-  <% end %>
-   </div>
-  </ul>
+    <span><img src ="/assets/arrow_top-4763537352ebf95dfc22270db55f9aa7798af326400039b6c27cc63b23ea2765.png" id="dropdownMenu" ></span>
+    <ul class="more_list" aria-labelledby="dropdownMenu1">
+      <li>
+        <%= link_to '詳細',"/top/#{comment.id}", method: :get %></a>
+      </li>
+      <% if user_signed_in? && current_user.id == comment.user_id %>
+        <li>
+          <%= link_to '編集', "/top/#{comment.id}/edit", method: :get %>
+        </li>
+        <li>
+          <%= link_to '削除', "/top/#{comment.id}", method: :delete %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
   <p class="comment_shousai"><%= comment.text %></p>
   <span class="comment_user1"><%= comment.name %></span>
 </div>
