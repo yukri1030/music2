@@ -1,6 +1,6 @@
-class Top < ActiveRecord::Migration[5.2]
+class CreateTops < ActiveRecord::Migration[5.2]
   def change
-    create_table :top do |t|
+    create_table :tops do |t|
       t.string      :name
       t.text        :text
       t.text        :image
